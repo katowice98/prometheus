@@ -5,7 +5,7 @@
 Prometheus Node Exporter là một chương trình exporter viết bằng ngôn ngữ Golang. Exporter là một chương trình được sử dụng với mục đích thu thập, chuyển đổi các metric không ở dạng kiểu dữ liệu chuẩn Prometheus sang chuẩn dữ liệu Prometheus. Sau đấy exporter sẽ expose web service api chứa thông tin các metrics hoặc đẩy về Prometheus.
 
 Node Exporter này sẽ đi thu thập các thông số về máy chủ Linux như : *ram, load, cpu, disk, network,…*. từ đó tổng hợp và xuất ra kênh truy cập các metrics hệ thống này ở port **TCP 9100** để Prometheus đi lấy dữ liệu metric cho việc giám sát.
-![](./node%20exporter%20prometheus.PNG)
+![](./Image/node%20exporter%20prometheus.PNG)
 
 # *Cài đặt Prometheus Node Exporter*
 Cài đặt node_exporter trên cùng một máy chủ prometheus. Ta sẽ theo dõi và lấy số liệu của máy chủ prometheus.
@@ -52,7 +52,7 @@ systemctl enable node_exporter
 ```sh
 systemctl status node_exporter
 ```
-![](./status%20node_exporter.PNG)
+![](./Image/status%20node_exporter.PNG)
 # *Thêm Node exporter vào Prometheus Server*
 - Đăng nhập vào người dùng prometheus
 ```sh
@@ -69,7 +69,7 @@ vi prometheus.yml
     static_configs: 
       - target: ['localhost: 9100']
 ```
-![](./prometheus.yml.PNG)
+![](./Image/prometheus.yml.PNG)
 Lưu và thoát.
 - Khởi động lại dịch vụ Prometheus
 ```sh
@@ -85,4 +85,4 @@ firewall-cmd --reload
 http://IP:9100/metrics
 ```
 Và ta sẽ nhận được dữ liệu của node_exporter dưới dạng Raw
-![](./9100%20metrics.PNG)
+![](./Image/9100%20metrics.PNG)
