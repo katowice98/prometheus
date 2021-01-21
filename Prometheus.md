@@ -12,7 +12,7 @@ Trang chủ: https://prometheus.io/
 * Hỗ trợ Push các time series thông qua một gateway trung gian.
 * Các máy chủ/thiết bị giám sát có thể được phát hiện thông qua service discovery hoặc cấu hình tĩnh.
 # *Tổng quan kiến trúc*
-![Kiến trúc](./Overview.PNG)
+![Kiến trúc](./Image/Overview.PNG)
 Prometheus thực hiện quá trình lấy các thông số/số liệu (metric) từ các job được chỉ định qua kênh trực tiếp hoặc thông qua dịch vụ Pushgateway trung gian. Sau đấy Prometheus sẽ lưu trữ các dữ liệu thu thập được ở local máy chủ. Tiếp đến sẽ chạy các rule để xử lý các dữ liệu theo nhu cầu cũng như kiểm tra thực hiện các cảnh báo mà bạn mong muốn.
 # *Cài đặt*
 Có 2 cách để cài đặt Prometheus:
