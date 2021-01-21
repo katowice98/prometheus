@@ -58,7 +58,6 @@ Giải nén tệp và đổi tên thư mục thành "prometheus"
 
 ```sh
 tar -xzvf prometheus-2.24.0.linux-amd64.tar.gz
-
 mv prometheus-2.24.0.linux-amd64/ prometheus/
 ```
 
@@ -97,7 +96,7 @@ WantedBy=multi-user.target
 ```
 Lưu và thoát ra.
 
-Khởi động dịch vụ prometheus và cho phép nó khởi chạy mọi lúc khi khởi động hệ thống.
+- Khởi động dịch vụ prometheus và cho phép nó khởi chạy mọi lúc khi khởi động hệ thống.
 
 ```sh
 systemctl daemon-reload
@@ -107,13 +106,13 @@ systemctl start prometheus
 systemctl enable prometheus
 ```
 
-Kiểm tra trạng thái Prometheus bằng lệnh dưới.
+- Kiểm tra trạng thái Prometheus bằng lệnh dưới.
 
 ```sh
 systemctl status prometheus
 ```
 
-![](./status%20prometheus.PNG)
+![](./Image/status%20prometheus.PNG)
 
 Đảm bảo rằng đã được **Active**
 
@@ -123,23 +122,22 @@ Hoặc kiểm tra nó bằng lệnh netstat
 netstat -plntu
 ```
 
-![](./netstat%20prome.PNG)
+![](./Image/netstat%20prome.PNG)
 
 Prometheus đang chạy theo mặc định dưới cổng '9090'.
 
-Mở cổng 9090 vào cổng danh sách Firewalld
+- Mở cổng 9090 vào cổng danh sách Firewalld
 
 ```sh
 firewall-cmd --add-port=9090/tcp --permanent
-
 firewall-cmd --reload
 ```
 
-Mở trình duyệt web và nhập địa chỉ IP của máy chủ với cổng 9090
+- Mở trình duyệt web và nhập địa chỉ IP của máy chủ với cổng 9090
 
 http://IP:9090/graph
 
-![](./9090.PNG)
+![](./Image/9090.PNG)
 
 # *Cài đặt Grafana*
 
@@ -154,6 +152,7 @@ systemctl start grafana-server
 systemctl status grafana-server
 sudo systemctl enable grafana-server.service
 ```
-![](./status%20grafana.PNG)
-Truy cập vào Grafana: http://IP:3000
-![](./grafana%20login.PNG)
+![](./Image/status%20grafana.PNG)
+
+- Truy cập vào Grafana: http://IP:3000
+![](./Image/grafana%20login.PNG)
